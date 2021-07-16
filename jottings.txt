@@ -7,3 +7,10 @@ then run
 php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
 
 php artisan make:middleware JWT
+
+
+https://sweetalert2.github.io/
+
+https://ned.im/noty/#/
+
+https://ned.im/noty/#/installation
