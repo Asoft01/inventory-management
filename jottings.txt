@@ -1,0 +1,9 @@
+https://jwt-auth.readthedocs.io/en/develop/laravel-installation/
+composer require tymon/jwt-auth 
+or add this in composer.json
+"tymon/jwt-auth": "dev-develop"
+
+then run 
+php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
+
+php artisan make:middleware JWT
