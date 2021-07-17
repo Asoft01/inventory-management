@@ -14,4 +14,5 @@ Route::group([
 
 });
 
+Route::apiResource('/employee', 'Api\EmployeeController');
 ?>

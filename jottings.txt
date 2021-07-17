@@ -14,3 +14,13 @@ https://sweetalert2.github.io/
 https://ned.im/noty/#/
 
 https://ned.im/noty/#/installation
+
+php artisan make:migration create_employee_table --create=employees
+
+php artisan make:controller Api/EmployeeController --resource
+
+ php artisan make:model Model/Employee
+
+ http://image.intervention.io/
+
+ composer.phar require intervention/image
