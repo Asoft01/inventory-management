@@ -42,7 +42,7 @@ class EmployeeController extends Controller
             $ext = explode('/', $sub)[1];
 
             $name = time().".".$ext;
-            $img = Image::make($request->photo);
+            $img = Image::make($request->photo)->resize(240, 200);
         }
     }
 
