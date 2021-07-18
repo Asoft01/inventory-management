@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Model\Employee;
 use Illuminate\Http\Request;
+use Image;
 
 class EmployeeController extends Controller
 {
@@ -37,12 +38,39 @@ class EmployeeController extends Controller
         if($request->photo) {
             // This takes the position of the image ending with the semi colon in the front end of the console log after the image has been uploaded 
             $position = strpos($request->photo, ';');
+            // Take data:image/jpeg;base64
             $sub = substr($request->photo, 0, $position);
             // remove the delimeter /
             $ext = explode('/', $sub)[1];
 
             $name = time().".".$ext;
             $img = Image::make($request->photo)->resize(240, 200);
+            $upload_path = 'backend/employee/';
+            $image_url= $upload_path.$name;
+            $img->save($image_url);
+
+            $employee = new Employee;
+            $employee->name = $request->name;
+            $employee->email = $request->email;
+            $employee->phone = $request->phone;
+            $employee->salary = $request->salary;
+            $employee->address = $request->address;
+            $employee->nid = $request->nid;
+            $employee->joining_date = $request->joining_date;
+            $employee->photo= $image_url;
+            $employee->save();
+            return response()->json(['message' => 'Employee Details Added Successfully With Image']);
+        }else{
+            $employee = new Employee;
+            $employee->name = $request->name;
+            $employee->email = $request->email;
+            $employee->phone = $request->phone;
+            $employee->salary = $request->salary;
+            $employee->address = $request->address;
+            $employee->nid = $request->nid;
+            $employee->joining_date = $request->joining_date;
+            $employee->save();
+            return response()->json(['message' => 'Employee Detail Added Successfully']);
         }
     }
 
