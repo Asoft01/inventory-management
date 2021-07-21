@@ -24,3 +24,9 @@ php artisan make:controller Api/EmployeeController --resource
  http://image.intervention.io/
 
  composer.phar require intervention/image
+
+ php artisan make:migration create_suppliers_table --create=suppliers
+
+ php artisan make:controller Api/SupplierController --resource
+
+  php artisan make:model Model/Supplier
