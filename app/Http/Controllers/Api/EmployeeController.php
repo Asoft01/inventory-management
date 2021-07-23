@@ -112,7 +112,7 @@ class EmployeeController extends Controller
             $ext = explode('/', $sub)[1];
 
             $name = time().".".$ext;
-            $img = Image::make($image)->resize(200, 200);
+            $img = Image::make($image)->resize(240, 200);
             $upload_path = 'backend/employee/';
             $image_url = $upload_path.$name;
             $success =  $img->save($image_url);

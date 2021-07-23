@@ -30,3 +30,9 @@ php artisan make:controller Api/EmployeeController --resource
  php artisan make:controller Api/SupplierController --resource
 
   php artisan make:model Model/Supplier
+
+  php artisan make:migration create_categories_table --create=categories
+
+  php artisan make:controller Api/CategoryController --resource
+
+  php artisan make:model Model/Category
