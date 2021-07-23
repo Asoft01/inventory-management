@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Model\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -14,17 +15,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $category = Category::all();
+        return response()->json($category);
     }
 
     /**
@@ -35,7 +27,13 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'category_name' => 'required|unique:categories|max:255'
+        ]);
+
+        $category = new Category;
+        $category->category_name = $request->category_name;
+        $category->save();
     }
 
     /**
@@ -45,17 +43,6 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
     {
         //
     }
