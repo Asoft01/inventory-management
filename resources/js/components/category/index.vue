@@ -24,12 +24,12 @@
                     <tbody>
                       <!-- <tr v-for="employee in employees" :key="employee.id"> -->
                       <tr v-for="category in filterSearch" :key="category.id">
-                        <td>{{ category.category_name }}</td>
-                        <td>
-                            <router-link :to="{name: 'edit-category', params:{id:category.id}}" class="btn btn-sm btn-primary">Edit</router-link>
-                            <a @click="deleteCategory(category.id)" href="#" class="btn btn-sm btn-danger"><font color="#ffffff"> Delete</font> </a>
-                        </td>
-                      </tr>
+                            <td>{{ category.category_name }}</td>
+                            <td>
+                                <router-link :to="{name: 'edit-category', params:{id:category.id}}" class="btn btn-sm btn-primary">Edit</router-link>
+                                <a @click="deleteCategory(category.id)" href="#" class="btn btn-sm btn-danger"><font color="#ffffff"> Delete</font> </a>
+                            </td>
+                        </tr>
                      
                     </tbody>
                   </table>

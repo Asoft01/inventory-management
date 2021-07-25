@@ -36,3 +36,5 @@ php artisan make:controller Api/EmployeeController --resource
   php artisan make:controller Api/CategoryController --resource
 
   php artisan make:model Model/Category
+
+  php artisan make:migration create_products_table --create=products

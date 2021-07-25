@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Model\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class CategoryController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,13 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $category = Category::all();
-        return response()->json($category);
+        $product = DB::table('products')
+                    ->join('categories', 'products.category_id', 'categories.id')
+                    ->join('suppliers', 'products.supplier_id', 'suppliers.id')
+                    ->select('categories.category_name', 'suppliers.name', 'products.*')
+                    ->orderBy('products.id', 'DESC')
+                    ->get();
+                    return response()->json($product);
     }
 
     /**
@@ -29,12 +33,15 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $validateData = $request->validate([
-            'category_name' => 'required|unique:categories|max:255'
+            'product_name' => 'required|max:255',
+            'product_code' => 'required|unique:products|max:255',
+            'category_id' => 'required',
+            'supplier_id' => 'required',
+            'buying_price' => 'required',
+            'selling_price' => 'required',
+            'buying_date' => 'required',
+            'category_id' => 'required'
         ]);
-
-        $category = new Category;
-        $category->category_name = $request->category_name;
-        $category->save();
     }
 
     /**
@@ -45,8 +52,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        $category = DB::table('categories')->where('id', $id)->first();
-        return response()->json($category);
+        //
     }
 
     /**
@@ -58,10 +64,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = array();
-        $data['category_name'] = $request->category_name;
-        DB::table('categories')->where('id', $id)->update($data);
-        return response()->json(['status'=> true, 'message'=> 'Category Updated Successfully']);
+        //
     }
 
     /**
@@ -72,7 +75,6 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        DB::table('categories')->where('id', $id)->delete();
-        
+        //
     }
 }
