@@ -73,5 +73,5 @@ export const routes = [
     //Salary Routes
     {path: '/given-salary', component: salary, name: 'given-salary'},
     {path: '/pay-salary/:id', component: paysalary, name: 'pay-salary'},
-    {path: '/salary/:id', component: allsalary, name: 'salary'},   
+    {path: '/salary', component: allsalary, name: 'salary'},   
 ];

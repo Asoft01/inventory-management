@@ -71971,7 +71971,7 @@ var routes = [{
   component: paysalary,
   name: 'pay-salary'
 }, {
-  path: '/salary/:id',
+  path: '/salary',
   component: allsalary,
   name: 'salary'
 }];
