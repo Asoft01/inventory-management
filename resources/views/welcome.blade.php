@@ -97,6 +97,35 @@
                         </div>
                         </div>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap4"
+                        aria-expanded="true" aria-controls="collapseBootstrap4">
+                        <i class="far fa-fw fa-window-maximize"></i>
+                        <span>Expense</span>
+                        </a>
+                        <div id="collapseBootstrap4" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Employee</h6>
+                            <router-link class="collapse-item" to="/store-expense">Add Expense</router-link>
+                            <router-link class="collapse-item" to="/expense">All Expense</router-link>
+                        </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap5"
+                        aria-expanded="true" aria-controls="collapseBootstrap5">
+                        <i class="far fa-fw fa-window-maximize"></i>
+                        <span>Salary</span>
+                        </a>
+                        <div id="collapseBootstrap5" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <router-link class="collapse-item" to="/given-salary">Add Salary</router-link>
+                            <router-link class="collapse-item" to="/salary">All Salary</router-link>
+                        </div>
+                        </div>
+                    </li>
                     
                     <li class="nav-item">
                         <a class="nav-link" href="forms.html">
@@ -352,7 +381,20 @@
 
                 <!---Container Fluid-->
             </div>
+
+             <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script> - developed by
+                        <b><a href="https://prymable.com/" target="_blank">A-$oft</a></b>
+                        </span>
+                    </div>
+                    </div>
+                </footer>
+                <!-- Footer -->
             </div>
+            
         </div>
     </div>
 

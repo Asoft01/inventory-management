@@ -6,6 +6,7 @@ let logout = require('./components/auth/logout.vue').default;
 // End of Authentication
 let home = require('./components/home.vue').default;
 
+// The variables after let must rhyme with what is in the path component
 // Employee Component
 let storeemployee = require('./components/employee/create.vue').default;
 let employee = require('./components/employee/index.vue').default;
@@ -26,6 +27,16 @@ let editcategory= require('./components/category/edit.vue').default;
 let storeproduct= require('./components/product/create.vue').default;
 let product= require('./components/product/index.vue').default;
 let editproduct= require('./components/product/edit.vue').default;
+
+// Expense omponent
+let storeexpense= require('./components/expense/create.vue').default;
+let expense= require('./components/expense/expense.vue').default;
+let editexpense= require('./components/expense/edit.vue').default;
+
+// Salary Component
+let salary = require('./components/salary/all_employee.vue').default;
+let paysalary = require('./components/salary/create.vue').default;
+let allsalary = require('./components/salary/index.vue').default;
 
 export const routes = [
     {path: '/', component: login, name: '/'},
@@ -54,4 +65,13 @@ export const routes = [
     {path: '/product', component: product, name: 'product'},
     {path: '/edit-product/:id', component: editproduct, name: 'edit-product'},
 
+     //Expense Routes
+     {path: '/store-expense', component: storeexpense, name: 'store-expense'},
+     {path: '/expense', component: expense, name: 'expense'},
+     {path: '/edit-expense/:id', component: editexpense, name: 'edit-expense'},
+
+    //Salary Routes
+    {path: '/given-salary', component: salary, name: 'given-salary'},
+    {path: '/pay-salary/:id', component: paysalary, name: 'pay-salary'},
+    {path: '/salary/:id', component: allsalary, name: 'salary'},   
 ];

@@ -38,3 +38,11 @@ php artisan make:controller Api/EmployeeController --resource
   php artisan make:model Model/Category
 
   php artisan make:migration create_products_table --create=products
+
+  php artisan make:migration create_expenses_table --create=expenses
+
+  php artisan make:model Model/Expense
+
+   php artisan make:controller Api/ExpenseController --resource
+
+   php artisan make:migration create_salaries_table --create=salaries
