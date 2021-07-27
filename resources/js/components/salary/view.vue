@@ -25,15 +25,14 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <!-- <tr v-for="employee in employees" :key="employee.id"> -->
-                      <tr v-for="employee in filterSearch" :key="employee.id">
-                        <td>{{ employee.name }}</td>
-                        <td> <img :src="employee.photo" id="emp_photo"></td>
-                        <td>{{ employee.phone }}</td>
-                        <td>{{ employee.salary }}</td>
-                        <td>{{ employee.joining_date }}</td>
+                      <!-- <tr v-for="salary in salaries" :key="salary.id"> -->
+                      <tr v-for="salary in filterSearch" :key="salary.id">
+                        <td>{{ salary.name }}</td>
+                        <td>{{ salary.salary_month }}</td>
+                        <td>{{ salary.amount }}</td>
+                        <td>{{ salary.salary_date }}</td>
                         <td>
-                            <router-link :to="{name: 'pay-salary', params:{id:employee.id}}" class="btn btn-sm btn-primary">Pay Salary</router-link>
+                            <router-link :to="{name: 'edit-salary', params:{id:salary.id}}" class="btn btn-sm btn-primary">Edit Salary</router-link>
                         </td>
                       </tr>
                      
