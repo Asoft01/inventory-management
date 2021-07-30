@@ -44,7 +44,6 @@ class SalaryController extends Controller
                 ->get();
         return response()->json($view);
     }
-
     public function EditSalary($id){
         
         $edit = DB::table('salaries')
@@ -52,7 +51,14 @@ class SalaryController extends Controller
                 ->select('employees.name', 'employees.email', 'salaries.*')
                 ->where('salaries.id', $id)
                 ->first();
-                return response()->json($edit);
+    return response()->json($edit);
+    }
 
+    public function SalaryUpdate(Request $request, $id){
+        $data = array();
+        $data['employee_id'] = $request->employee_id;
+        $data['amount'] = $request->amount;
+        $data['salary_month'] = $request->salary_month;
+        DB::table('salaries')->where('id', $id)->update($data);
     }
 }

@@ -53,6 +53,7 @@
                                                 <small class="text-danger" v-if="errors.address">{{ errors.salary_month[0] }}</small>
                                             </div>
 
+                                            <input type="hidden" v-model="form.employee_id" id="">
                                              <div class="col-md-6">
                                                 <label for="exampleFormControlSelect1"><b> Amount </b></label>
                                                 <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Enter Your Salary" v-model="form.amount">
@@ -101,18 +102,17 @@
                 email: '',
                 salary_month: '',
                 amount: '',
+                employee_id: ''
             },
-            errors: {
-
-            }
+            errors: {}
         }
     },
     methods: {
-        SalaryPaid(){
+        SalaryUpdate(){
             let id = this.$route.params.id
-            axios.post('/api/salary/paid/'+id, this.form)
+            axios.post('/api/salary/update/'+id, this.form)
             .then(()=> {
-                this.$router.push({ name: 'given-salary' })
+                this.$router.push({ name: 'salary' })
                 Notification.success();
             })
             .catch(error => this.errors = error.response.data.errors)

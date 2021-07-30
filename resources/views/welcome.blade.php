@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link href="img/logo/logo.png" rel="icon">
-  <title>RuangAdmin - Dashboard</title>
+  <title>Soft Inventory - Dashboard</title>
   <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
   <link href="{{ asset('backend/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
   <link href="{{ asset('backend/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
@@ -26,7 +26,7 @@
                         <div class="sidebar-brand-icon">
                         <img src="{{ asset('backend/img/logo/logo2.png') }}">
                         </div>
-                        <div class="sidebar-brand-text mx-3">RuangAdmin</div>
+                        <div class="sidebar-brand-text mx-3">Soft Inventory</div>
                     </a>
                     <hr class="sidebar-divider my-0">
                     <li class="nav-item active">
@@ -34,6 +34,13 @@
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>Dashboard</span></router-link>
                     </li>
+
+                    <li class="nav-item bg-info">
+                        <router-link class="nav-link" to="/pos">
+                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <span>POS</span></router-link>
+                    </li>
+                    
                     <hr class="sidebar-divider">
                     <div class="sidebar-heading">
                         Features
@@ -114,6 +121,22 @@
                     </li>
 
                     <li class="nav-item">
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap44"
+                        aria-expanded="true" aria-controls="collapseBootstrap44">
+                        <i class="far fa-fw fa-window-maximize"></i>
+                        <span>Customers</span>
+                        </a>
+                        <div id="collapseBootstrap44" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Employee</h6>
+                            <router-link class="collapse-item" to="/store-customer">Add Customer</router-link>
+                            <router-link class="collapse-item" to="/customer">All Customer</router-link>
+                        </div>
+                        </div>
+                    </li>
+
+
+                    <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap5"
                         aria-expanded="true" aria-controls="collapseBootstrap5">
                         <i class="far fa-fw fa-window-maximize"></i>
@@ -128,22 +151,22 @@
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link" href="forms.html">
-                        <i class="fab fa-fw fa-wpforms"></i>
-                        <span>Forms</span>
-                        </a>
+                        <router-link class="nav-link" to="/stock">
+                            <i class="fab fa-fw fa-wpforms"></i>
+                            <span>Stock</span>
+                        </router-link>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"
                         aria-controls="collapseTable">
                         <i class="fas fa-fw fa-table"></i>
-                        <span>Tables</span>
+                        <span>Reports</span>
                         </a>
                         <div id="collapseTable" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Tables</h6>
-                            <a class="collapse-item" href="simple-tables.html">Simple Tables</a>
-                            <a class="collapse-item" href="datatables.html">DataTables</a>
+                            <a class="collapse-item" href="simple-tables.html">Report One</a>
+                            <a class="collapse-item" href="datatables.html">Report Two</a>
                         </div>
                         </div>
                     </li>

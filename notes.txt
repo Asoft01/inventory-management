@@ -46,3 +46,11 @@ php artisan make:controller Api/EmployeeController --resource
    php artisan make:controller Api/ExpenseController --resource
 
    php artisan make:migration create_salaries_table --create=salaries
+   
+   php artisan make:migration create_customers_table --create=customers
+
+   php artisan make:controller Api/CustomerController --resource
+
+   php artisan make:model Model/Customer
+
+   php artisan make:controller Api/PosController

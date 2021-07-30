@@ -75,7 +75,7 @@
            axios.get('/api/salary/view/'+id)
            .then(({data}) => (this.salaries = data ))
            .catch(error => this.errors = error.response.data.errors)
-       }
+       },
     },
     created(){
         this.viewSalary();

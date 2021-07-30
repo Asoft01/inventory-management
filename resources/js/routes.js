@@ -40,6 +40,19 @@ let allsalary = require('./components/salary/index.vue').default;
 let viewsalary = require('./components/salary/view.vue').default;
 let editsalary = require('./components/salary/edit.vue').default;
 
+
+// Expense omponent
+let stock= require('./components/product/stock.vue').default;
+let editstock= require('./components/product/edit-stock.vue').default;
+
+// Customer Component
+let storecustomer = require('./components/customer/create.vue').default;
+let customer = require('./components/customer/index.vue').default;
+let editcustomer = require('./components/customer/edit.vue').default;
+
+// Point Component
+let pos = require('./components/pos/pointofsale.vue').default;
+
 export const routes = [
     {path: '/', component: login, name: '/'},
     {path: '/register', component: register, name: 'register'},
@@ -77,5 +90,17 @@ export const routes = [
     {path: '/pay-salary/:id', component: paysalary, name: 'pay-salary'},
     {path: '/salary', component: allsalary, name: 'salary'},   
     {path: '/view-salary/:id', component: viewsalary, name: 'view-salary'},  
-    {path: '/edit-salary/:id', component: editsalary, name: 'edit-salary'}, 
+    {path: '/edit-salary/:id', component: editsalary, name: 'edit-salary'},
+
+    // Stock Routes
+    {path: '/stock', component: stock, name: 'stock'},
+    {path: '/edit-stock/:id', component: editstock, name: 'edit-stock'},
+
+    // Customer Routes 
+    {path: '/store-customer', component: storecustomer, name : 'store-customer'},
+    {path: '/customer', component: customer, name : 'customer'},
+    {path: '/edit-customer/:id', component: editcustomer, name : 'edit-customer'},
+
+    // POS Routes
+    {path: '/pos', component: pos, name: 'pos'},
 ];
