@@ -45,9 +45,10 @@
 <script>
     export default {
     // This runs first before login method works
-    created(){
+
+     created(){
         if(!User.loggedIn()){
-            this.$router.push({ name: '/' })
+            this.$router.push({name: '/'});
         }
     },
     data(){

@@ -59,7 +59,7 @@
     // This runs first before login method works
     created(){
         if(!User.loggedIn()){
-            this.$router.push({ name: '/' })
+            this.$router.push({name: '/'});
         }
     },
     data(){

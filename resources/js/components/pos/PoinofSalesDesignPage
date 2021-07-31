@@ -30,16 +30,21 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    <tr v-for="cart in carts" :key="cart.id">
-                                        <td>{{ cart.pro_name }}</td>
-                                        <td><input type="text" readonly="" style="width: 15px" :value="cart.pro_quantity">
-                                            <button class="btn btn-sm btn-success">+</button>
-                                            <button class="btn btn-sm btn-danger">-</button>
-                                        </td>
-                                        <td>{{ cart.product_price }}</td>
-                                        <td>{{ cart.sub_total }}</td>
-                                        <td><a @click="removeItem(cart.id)" class="btn btn-sm btn-primary"><font color="#ffffff"> X </font></a></td>
+                                    <tr>
+                                        <td><a href="#">Name</a></td>
+                                        <td>Qty</td>
+                                        <td>Unit</td>
+                                        <td>Total</td>
+                                        <td><a href="#" class="btn btn-sm btn-primary">X</a></td>
                                     </tr>
+                                    <tr>
+                                        <td><a href="#">Name</a></td>
+                                        <td>Qty</td>
+                                        <td>Unit</td>
+                                        <td>Total</td>
+                                        <td><a href="#" class="btn btn-sm btn-primary">X</a></td>
+                                    </tr>
+
                                 </tbody>
                             </table>
                         </div>
@@ -67,7 +72,9 @@
                             <form>
                                 <label> Customer Name</label>
                                 <select class="form-control" v-model="customer_id">
-                                    <option v-for="customer in customers">{{ customer.name }}</option>
+                                    <option value="">Adeleke</option>
+                                    <option value="">Hammed</option>
+                                    <option value="">Lekan</option>
                                 </select>
                                 
                                 <label for="pay">Pay</label>
@@ -110,7 +117,7 @@
                             <input type="text" v-model="searchTerm" class="form-control" style="width: 650px" placeholder="Search Product">
                             <div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-6" v-for="product in filterSearch" :key="product.id">
-                                    <button class="btn btn-sm" @click.prevent="AddToCart(product.id)">
+                                    <a href="#">
                                         <div class="card" style="width: 8.5rem; margin-bottom:5px">
                                             <img :src="product.image" id="emp_photo" class="card-img-top">
                                             <div class="card-body">
@@ -119,7 +126,7 @@
                                                 <span class="badge badge-danger" v-else="">Stock Out</span>
                                             </div>
                                         </div>  
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -154,6 +161,7 @@
 
 <script>
     export default {
+    // This runs first before login method works
     created(){
         if(!User.loggedIn()){
             this.$router.push({ name: '/' })
@@ -162,12 +170,6 @@
     created(){
         this.allProduct();
         this.allCategory();
-        this.allCustomer();
-        this.cartProduct();
-        // To Automatically Add Product to Cart and Show the products in the page
-        Reload.$on('AfterAdd', ()=> {
-            this.cartProduct();
-        });
     },
     data(){
         return {
@@ -175,10 +177,7 @@
             categories: '',
             getproducts: [],
             searchTerm:'',
-            getsearchTerm: '',
-            customers: '',
-            errors: '',
-            carts: []
+            getsearchTerm: ''
         }
     },
     computed: {
@@ -196,29 +195,6 @@
         }
     },
     methods: {
-    // Cart Method
-    AddToCart(id){
-        // alert(id);
-    axios.get('/api/addToCart/'+id)
-        .then(() => {
-            Reload.$emit('AfterAdd')
-            Notification.cart_success()
-        })
-        .catch()
-    }, 
-    cartProduct(){
-        axios.get('/api/cart/product/')
-        .then(({data}) => (this.carts = data ))
-        .catch()
-    },
-    removeItem(id){
-        axios.get('/api/remove/cart/'+id)
-        .then(()=> {
-            Reload.$emit('AfterAdd');
-            Notification.cart_delete();
-        })
-    },
-    //End Cart Method
        allProduct(){
            axios.get('/api/product/')
            .then(({data})=> (this.products = data))
@@ -228,11 +204,6 @@
            axios.get('/api/category/')
            .then(({data})=> (this.categories = data))
            .catch()
-       },
-       allCustomer(){
-           axios.get('/api/customer/')
-           .then(({data}) => (this.customers = data ))
-           .catch(console.log('error'))
        },
        // This is used to fetch product based on categories
         subproduct(id){

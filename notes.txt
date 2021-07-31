@@ -54,3 +54,7 @@ php artisan make:controller Api/EmployeeController --resource
    php artisan make:model Model/Customer
 
    php artisan make:controller Api/PosController
+
+   php artisan make:migration create_pos_table --create=pos
+
+   php artisan make:controller Api/CartController

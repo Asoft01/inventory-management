@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Api;
 
+use Illuminate\Support\Facades\Auth;
+
 use App\Http\Controllers\Controller;
 use App\Model\Product;
 use Illuminate\Http\Request;
@@ -10,6 +12,11 @@ use Image;
 
 class ProductController extends Controller
 {
+    // public function __construct()
+    // {
+    //     $this->middleware('JWT', ['except' => ['store']]);
+    // }
+
     /**
      * Display a listing of the resource.
      *
