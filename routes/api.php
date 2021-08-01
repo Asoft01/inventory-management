@@ -33,4 +33,10 @@ Route::get('/getting/product/{id}', 'Api\PosController@GetProduct');
 Route::get('/addToCart/{id}', 'Api\CartController@AddToCart');
 Route::get('/cart/product', 'Api\CartController@CartProduct');
 Route::get('/remove/cart/{id}', 'Api\CartController@removeCart');
+
+Route::get('/increment/{id}', 'Api\CartController@increment');
+Route::get('/decrement/{id}', 'Api\CartController@decrement');
+
+// Vat Route
+Route::get('/vats', 'Api\CartController@Vats');
 ?>
