@@ -263,8 +263,24 @@
     },
     orderdone(){
         // alert('done');
-        let total = this.subtotal * vats.vat / 100 + this.subtotal;
-        var data = { qty: this.qty, subtotal: this.subtotal, customer_id : this.customer_id, payby: this.payby, pay: this.pay, vat : this.vats.vat, total: total }
+        let total = this.subtotal * this.vats.vat / 100 + this.subtotal;
+        var data = 
+                { 
+                    qty: this.qty, 
+                    subtotal: this.subtotal, 
+                    customer_id : this.customer_id, 
+                    payby: this.payby, 
+                    pay: this.pay,
+                    due: this.due, 
+                    vat : this.vats.vat, 
+                    total: total,
+                }
+
+        axios.post('/api/orderdone', data)
+        .then(()=> {
+            Notification.success();
+            this.$router.push({ name: 'home'});
+        })
     },
     //End Cart Method
        allProduct(){
