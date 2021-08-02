@@ -39,11 +39,11 @@ class PosController extends Controller
 
         $odata = array();
         foreach($contents as $content){
-            $odata['order_id'] = $order_id;
-            $odata['product_id'] = $content->pro_id;
+            $odata['order_id'] =     $order_id;
+            $odata['product_id'] =   $content->pro_id;
             $odata['pro_quantity'] = $content->pro_quantity;
-            $odata['product_price'] = $content->product_price;
-            $odata['sub_total'] = $content->sub_total;
+            $odata['product_price'] =$content->product_price;
+            $odata['sub_total'] =    $content->sub_total;
 
             DB::table('order_details')->insert($odata);
 

@@ -40,4 +40,7 @@ Route::get('/decrement/{id}', 'Api\CartController@decrement');
 // Vat Route
 Route::get('/vats', 'Api\CartController@Vats');
 Route::post('/orderdone', 'Api\PosController@OrderDone');
+
+// Order Route
+Route::get('/orders', 'Api/OrderController@TodayOrder');
 ?>
