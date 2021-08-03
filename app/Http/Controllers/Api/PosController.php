@@ -30,7 +30,7 @@ class PosController extends Controller
         $data['pay'] =         $request->pay;
         $data['due'] =         $request->due;
         $data['payby'] =       $request->payby;
-        $data['order_date'] =  date('d/m/y');
+        $data['order_date'] =  date('d/m/Y');
         $data['order_month'] = date('F');
         $data['order_year'] =  date('Y');
         $order_id = DB::table('orders')->insertGetId($data);

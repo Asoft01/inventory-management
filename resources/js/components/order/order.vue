@@ -14,21 +14,24 @@
                   <table class="table align-items-center table-flush">
                     <thead class="thead-light">
                       <tr>
-                        <th>Details</th>
-                        <th>Amount</th>
-                        <th>Date</th>
+                        <th>Name</th>
+                        <th>Total Amount</th>
+                        <th>Pay</th>
+                        <th>Due</th>
+                        <th>PayBy</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
                       <!-- <tr v-for="employee in employees" :key="employee.id"> -->
-                      <tr v-for="expense in filterSearch" :key="expense.id">
-                            <td>{{ expense.details }}</td>
-                            <td>{{ expense.amount }}</td>
-                            <td>{{ expense.expense_date }}</td>
+                      <tr v-for="order in filterSearch" :key="order.id">
+                            <td>{{ order.name }}</td>
+                            <td>{{ order.total }}</td>
+                            <td>{{ order.pay }}</td>
+                            <td>{{ order.due }}</td>
+                            <td>{{ order.payby }}</td>
                             <td>
-                                <router-link :to="{name: 'edit-expense', params:{id:expense.id}}" class="btn btn-sm btn-primary">Edit</router-link>
-                                <a @click="deleteExpense(expense.id)" href="#" class="btn btn-sm btn-danger"><font color="#ffffff"> Delete</font> </a>
+                                <router-link :to="{name: 'view-order', params:{id:order.id}}" class="btn btn-sm btn-primary">View</router-link>
                             </td>
                         </tr>
                      
