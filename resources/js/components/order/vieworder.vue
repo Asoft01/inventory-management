@@ -18,57 +18,16 @@
                                             <!-- Simple Tables -->
                                             <div class="card">
                                                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                                <h6 class="m-0 font-weight-bold text-primary">Simple Tables</h6>
+                                                <h6 class="m-0 font-weight-bold text-primary">Order Details</h6>
                                                 </div>
                                                 <div class="table-responsive">
-                                                <table class="table align-items-center table-flush">
-                                                    <thead class="thead-light">
-                                                    <tr>
-                                                        <th>Order ID</th>
-                                                        <th>Customer</th>
-                                                        <th>Item</th>
-                                                        <th>Status</th>
-                                                        <th>Action</th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                    <tr>
-                                                        <td><a href="#">RA0449</a></td>
-                                                        <td>Udin Wayang</td>
-                                                        <td>Nasi Padang</td>
-                                                        <td><span class="badge badge-success">Delivered</span></td>
-                                                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><a href="#">RA5324</a></td>
-                                                        <td>Jaenab Bajigur</td>
-                                                        <td>Gundam 90' Edition</td>
-                                                        <td><span class="badge badge-warning">Shipping</span></td>
-                                                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><a href="#">RA8568</a></td>
-                                                        <td>Rivat Mahesa</td>
-                                                        <td>Oblong T-Shirt</td>
-                                                        <td><span class="badge badge-danger">Pending</span></td>
-                                                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><a href="#">RA1453</a></td>
-                                                        <td>Indri Junanda</td>
-                                                        <td>Hat Rounded</td>
-                                                        <td><span class="badge badge-info">Processing</span></td>
-                                                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><a href="#">RA1998</a></td>
-                                                        <td>Udin Cilok</td>
-                                                        <td>Baby Powder</td>
-                                                        <td><span class="badge badge-success">Delivered</span></td>
-                                                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
+                                                    <ul class="list-group">
+                                                        <li class="list-group-item"><b> Name : </b> {{ orders.name }}</li>
+                                                        <li class="list-group-item"><b> Phone : </b> {{ orders.phone }}</li>
+                                                        <li class="list-group-item"><b> Address : </b> {{ orders.address }}</li>
+                                                        <li class="list-group-item"><b> Date : </b> {{ orders.order_date }}</li>
+                                                        <li class="list-group-item"><b> Pay Through : </b> {{ orders.payby }}</li>
+                                                    </ul>
                                                 </div>
                                                 <div class="card-footer"></div>
                                             </div>
@@ -78,57 +37,16 @@
                                             <!-- Simple Tables -->
                                             <div class="card">
                                                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                                <h6 class="m-0 font-weight-bold text-primary">Simple Tables</h6>
+                                                <h6 class="m-0 font-weight-bold text-primary">Order Details</h6>
                                                 </div>
                                                 <div class="table-responsive">
-                                                <table class="table align-items-center table-flush">
-                                                    <thead class="thead-light">
-                                                    <tr>
-                                                        <th>Order ID</th>
-                                                        <th>Customer</th>
-                                                        <th>Item</th>
-                                                        <th>Status</th>
-                                                        <th>Action</th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                    <tr>
-                                                        <td><a href="#">RA0449</a></td>
-                                                        <td>Udin Wayang</td>
-                                                        <td>Nasi Padang</td>
-                                                        <td><span class="badge badge-success">Delivered</span></td>
-                                                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><a href="#">RA5324</a></td>
-                                                        <td>Jaenab Bajigur</td>
-                                                        <td>Gundam 90' Edition</td>
-                                                        <td><span class="badge badge-warning">Shipping</span></td>
-                                                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><a href="#">RA8568</a></td>
-                                                        <td>Rivat Mahesa</td>
-                                                        <td>Oblong T-Shirt</td>
-                                                        <td><span class="badge badge-danger">Pending</span></td>
-                                                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><a href="#">RA1453</a></td>
-                                                        <td>Indri Junanda</td>
-                                                        <td>Hat Rounded</td>
-                                                        <td><span class="badge badge-info">Processing</span></td>
-                                                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><a href="#">RA1998</a></td>
-                                                        <td>Udin Cilok</td>
-                                                        <td>Baby Powder</td>
-                                                        <td><span class="badge badge-success">Delivered</span></td>
-                                                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
+                                                    <ul class="list-group">
+                                                        <li class="list-group-item"><b> Sub Total : </b> {{ orders.sub_total }} $</li>
+                                                        <li class="list-group-item"><b> Vat : </b> {{ orders.vat }} $</li>
+                                                        <li class="list-group-item"><b> Total : </b> {{ orders.total }} $</li>
+                                                        <li class="list-group-item"><b> Pay Amount : </b> {{ orders.pay }} $</li>
+                                                        <li class="list-group-item"><b> Due Amount : </b> {{ orders.due }} $</li>
+                                                    </ul>
                                                 </div>
                                                 <div class="card-footer"></div>
                                             </div>
@@ -140,55 +58,29 @@
                                         <!-- Simple Tables -->
                                         <div class="card">
                                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                            <h6 class="m-0 font-weight-bold text-primary">Simple Tables</h6>
+                                            <h6 class="m-0 font-weight-bold text-primary">Order Details</h6>
                                             </div>
                                             <div class="table-responsive">
                                             <table class="table align-items-center table-flush">
                                                 <thead class="thead-light">
                                                 <tr>
-                                                    <th>Order ID</th>
-                                                    <th>Customer</th>
-                                                    <th>Item</th>
-                                                    <th>Status</th>
-                                                    <th>Action</th>
+                                                    <th>Product Name</th>
+                                                    <th>Product Code</th>
+                                                    <th>Image</th>
+                                                    <th>Qty</th>
+                                                    <th>Unit Price</th>
+                                                    <th>Total</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr>
-                                                    <td><a href="#">RA0449</a></td>
-                                                    <td>Udin Wayang</td>
-                                                    <td>Nasi Padang</td>
-                                                    <td><span class="badge badge-success">Delivered</span></td>
-                                                    <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><a href="#">RA5324</a></td>
-                                                    <td>Jaenab Bajigur</td>
-                                                    <td>Gundam 90' Edition</td>
-                                                    <td><span class="badge badge-warning">Shipping</span></td>
-                                                    <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><a href="#">RA8568</a></td>
-                                                    <td>Rivat Mahesa</td>
-                                                    <td>Oblong T-Shirt</td>
-                                                    <td><span class="badge badge-danger">Pending</span></td>
-                                                    <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><a href="#">RA1453</a></td>
-                                                    <td>Indri Junanda</td>
-                                                    <td>Hat Rounded</td>
-                                                    <td><span class="badge badge-info">Processing</span></td>
-                                                    <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><a href="#">RA1998</a></td>
-                                                    <td>Udin Cilok</td>
-                                                    <td>Baby Powder</td>
-                                                    <td><span class="badge badge-success">Delivered</span></td>
-                                                    <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                                                </tr>
+                                                    <tr v-for="detail in details">
+                                                        <td>{{ detail.product_name }}</td>
+                                                        <td>{{ detail.product_code}}</td>
+                                                        <td><img :src="'/'+detail.image" id="emp_photo"></td>
+                                                        <td>{{ detail.pro_quantity }}</td>
+                                                        <td>{{ detail.product_price }} $</td>
+                                                        <td>{{ detail.sub_total }} $</td>
+                                                    </tr>
                                                 </tbody>
                                             </table>
                                             </div>
@@ -208,38 +100,41 @@
 
 <script>
     export default {
-    // This runs first before login method works
-    created(){
-        if(!User.loggedIn()){
-            this.$router.push({ name: '/' })
-        }
-    },
-    created(){
-        // This is coming from order.vue params id
-        let id = this.$route.params.id
-        axios.get('/api/order/details/'+id)
-        .then(({data}) => (this.orders = data))
-        .catch(console.log('error'))
+        // This runs first before login method works
+        created(){
+            if(!User.loggedIn()){
+                this.$router.push({ name: '/' })
+            }
+        },
+        created(){
+            // This is coming from order.vue params id
+            let id = this.$route.params.id
+            axios.get('/api/order/details/'+id)
+            .then(({data}) => (this.orders = data))
+            .catch(console.log('error'))
 
-        axios.get('/api/order/orderdetails/'+id)
-        .then(({data}) => (this.details = data))
-        .catch(console.log('error'))
+            axios.get('/api/order/orderdetails/'+id)
+            .then(({data}) => (this.details = data))
+            .catch(console.log('error'))
 
-    },
-    data(){
-        return {
-          
-            errors: {},
-            orders:{},
-            details: {}
-        }
-    },
-    methods: {
-       
-    }   
-}
+        },
+        data(){
+            return {
+            
+                errors: {},
+                orders:{},
+                details: {}
+            }
+        },
+        methods: {
+        
+        }   
+    }
 </script>
 
-<style type="text/css" lang="">
-    
+<style type="text/css">
+    #emp_photo{
+        height: 40px;
+        width: 40px;
+    }
 </style>
