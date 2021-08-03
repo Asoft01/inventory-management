@@ -68,6 +68,18 @@ class PosController extends Controller
                 ->where('orders.order_date', $done)
                 ->get();
         // return response()->json($orderdate);
-        return response()->json($orderdate);
+        return response()->json($order);
+    }
+
+    public function TodaySell(){
+        $date = date('d/m/Y');
+        $sell = DB::table('orders')->where('order_date', $date)->sum('total');
+        return response()->json($sell);
+    }
+
+    public function TodayIncome(){
+        $date = date('d/m/Y');
+        $income = DB::table('orders')->where('order_date', $date)->sum('pay');
+        return response()->json($income);
     }
 }
