@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 03, 2021 at 10:54 PM
+-- Generation Time: Aug 11, 2021 at 07:47 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -41,7 +41,8 @@ CREATE TABLE `categories` (
 INSERT INTO `categories` (`id`, `category_name`, `created_at`, `updated_at`) VALUES
 (1, 'Football', '2021-07-23 21:50:47', '2021-07-23 21:50:47'),
 (2, 'Computers', '2021-07-23 21:51:38', '2021-07-23 21:51:38'),
-(3, 'Laptops', '2021-07-23 21:51:55', '2021-07-23 21:51:55');
+(3, 'Laptops', '2021-07-23 21:51:55', '2021-07-23 21:51:55'),
+(5, 'Shoe', '2021-08-06 20:03:07', '2021-08-06 20:03:07');
 
 -- --------------------------------------------------------
 
@@ -312,7 +313,8 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`id`, `category_id`, `product_name`, `product_code`, `root`, `buying_price`, `selling_price`, `supplier_id`, `buying_date`, `image`, `product_quantity`, `created_at`, `updated_at`) VALUES
 (1, 1, '11Product1', '11Product101', '11Root', '30', '25', 5, '2021-07-31', 'backend/product/1627246017.jpeg', '0', '2021-07-25 19:46:57', '2021-07-25 19:46:57'),
-(3, 2, 'Phone', 'ph001', 'Root1', '10', '40', 4, '2021-07-30', 'backend/product/1627385314.jpeg', '20', '2021-07-27 10:28:34', '2021-07-27 10:28:34');
+(3, 2, 'Phone', 'ph001', 'Root1', '10', '40', 4, '2021-07-30', 'backend/product/1627385314.jpeg', '20', '2021-07-27 10:28:34', '2021-07-27 10:28:34'),
+(4, 5, 'Brown Shoe', 'BS001', 'FirstClass', '2000', '3000', 4, '2020-11-13', 'backend/product/1628284112.jpeg', '30', '2021-08-06 20:08:32', '2021-08-06 20:08:32');
 
 -- --------------------------------------------------------
 
@@ -366,8 +368,8 @@ CREATE TABLE `suppliers` (
 --
 
 INSERT INTO `suppliers` (`id`, `name`, `email`, `phone`, `address`, `photo`, `shopname`, `created_at`, `updated_at`) VALUES
-(4, 'Wale Olayinka', 'walex@gmail.com', '123403999', 'Ologuneru', 'backend/supplier/1626906294.jpeg', 'Shoprite', '2021-07-21 21:24:54', '2021-07-21 21:24:54'),
-(5, 'Abdul Hakeem', 'abd@gmail.com', '08168516930', 'Eleyele', 'backend/supplier/1627074675.jpeg', 'Jendor', '2021-07-21 21:25:37', '2021-07-21 21:25:37');
+(4, 'Harry Smith', 'harrysmith@gmail.com', '123403999', 'New York City', 'backend/supplier/1626906294.jpeg', 'Shoprite', '2021-07-21 21:24:54', '2021-07-21 21:24:54'),
+(5, 'Mary Julius', 'abd@gmail.com', '+235 890 002', 'Hong Kong', 'backend/supplier/1627074675.jpeg', 'Jendor', '2021-07-21 21:25:37', '2021-07-21 21:25:37');
 
 -- --------------------------------------------------------
 
@@ -499,7 +501,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `customers`
@@ -559,7 +561,7 @@ ALTER TABLE `pos`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `salaries`
