@@ -9,10 +9,23 @@
   <meta name="author" content="">
   <link href="img/logo/logo.png" rel="icon">
   <title>Soft Inventory - Dashboard</title>
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
+
+    @if(parse_url(url('/'), PHP_URL_SCHEME) == 'HTTPS')
+        <link rel="stylesheet" href="{{ secure_asset('css/app.css') }}">
+        <link rel="stylesheet" href="{{ secure_asset('backend/vendor/fontawesome-free/css/all.min.css') }}">
+        <link rel="stylesheet" href="{{ secure_asset('backend/vendor/bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ secure_asset('backend/css/ruang-admin.min.css') }}">
+    @else
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('backend/vendor/fontawesome-free/css/all.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('backend/vendor/bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('backend/css/ruang-admin.min.css') }}">
+    @endif
+
+  {{-- <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
   <link href="{{ asset('backend/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
   <link href="{{ asset('backend/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
-  <link href="{{ asset('backend/css/ruang-admin.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('backend/css/ruang-admin.min.css') }}" rel="stylesheet"> --}}
 </head>
 
 <body id="page-top">
@@ -24,7 +37,13 @@
                 <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
                     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                         <div class="sidebar-brand-icon">
-                        <img src="{{ asset('backend/img/logo/logo2.png') }}">
+
+                            @if(parse_url(url('/'), PHP_URL_SCHEME) == 'HTTPS')
+                                <img src="{{ secure_asset('backend/img/logo/logo2.png') }}">
+                            @else
+                                <img src="{{ asset('backend/img/logo/logo2.png') }}">
+                            @endif
+                            
                         </div>
                         <div class="sidebar-brand-text mx-3">Soft Inventory</div>
                     </a>
@@ -384,7 +403,13 @@
                         <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            <img class="img-profile rounded-circle" src="{{ asset('backend/img/boy.png') }}" style="max-width: 60px">
+
+                            @if(parse_url(url('/'), PHP_URL_SCHEME) == 'HTTPS')
+                                <img class="img-profile rounded-circle" src="{{ secure_asset('backend/img/logo/logo2.png') }}" style="max-width: 60px">
+                            @else
+                                <img class="img-profile rounded-circle" src="{{ asset('backend/img/boy.png') }}" style="max-width: 60px">
+                            @endif
+
                             <router-link to="/logout" class="ml-2 d-none d-lg-inline text-white small">Logout</router-link>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -440,13 +465,23 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
-  <script src="{{ asset('js/app.js') }}"></script>
-  <script src="{{ asset('backend/vendor/jquery/jquery.min.js') }}"></script>
-  <script src="{{ asset('backend/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-  <script src="{{ asset('backend/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
-  <script src="{{ asset('backend/js/ruang-admin.min.js') }}"></script>
-  <script src="{{ asset('backend/vendor/chart.js/Chart.min.js') }}"></script>
-  <script src="{{ asset('backend/js/demo/chart-area-demo.js') }}"></script>  
+  @if(parse_url(url('/'), PHP_URL_SCHEME) == 'HTTPS')
+        <script src="{{ secure_asset('js/app.js') }}"></script>
+        <script src="{{ secure_asset('backend/vendor/jquery/jquery.min.js') }}"></script>
+        <script src="{{ secure_asset('backend/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ secure_asset('backend/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+        <script src="{{ secure_asset('backend/js/ruang-admin.min.js') }}"></script>
+        <script src="{{ secure_asset('backend/vendor/chart.js/Chart.min.js') }}"></script>
+        <script src="{{ secure_asset('backend/js/demo/chart-area-demo.js') }}"></script>
+    @else
+        <script src="{{ asset('js/app.js') }}"></script>
+        <script src="{{ asset('backend/vendor/jquery/jquery.min.js') }}"></script>
+        <script src="{{ asset('backend/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('backend/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+        <script src="{{ asset('backend/js/ruang-admin.min.js') }}"></script>
+        <script src="{{ asset('backend/vendor/chart.js/Chart.min.js') }}"></script>
+        <script src="{{ asset('backend/js/demo/chart-area-demo.js') }}"></script>
+    @endif 
 
   <script type="text/javascript">
       let token = localStorage.getItem('token');
