@@ -50033,7 +50033,7 @@ var staticRenderFns = [
               staticClass: "custom-control-label",
               attrs: { for: "customCheck" }
             },
-            [_vm._v("Remember\n                            Me")]
+            [_vm._v("Remember\n                                Me")]
           )
         ]
       )
