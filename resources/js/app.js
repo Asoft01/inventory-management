@@ -6,6 +6,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
+
 // Router Imported
 import {routes} from './routes';
 
@@ -42,6 +43,7 @@ const router = new VueRouter({
     routes,
     mode: 'history'
 });
+
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 

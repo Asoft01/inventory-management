@@ -8,6 +8,9 @@ php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServicePro
 
 php artisan make:middleware JWT
 
+php artisan jwt:secret
+
+
 
 https://sweetalert2.github.io/
 
