@@ -54,9 +54,10 @@
     export default {
     // This runs first before login method works
     created(){
-        if(!User.loggedIn()){
+         if(!User.loggedIn()){
             this.$router.push({ name: '/' })
         }
+        this.allEmployee();
     },
     data(){
         return {
@@ -107,9 +108,6 @@
                 }
             })
        }
-    },
-    created(){
-        this.allEmployee();
     }
    
 }

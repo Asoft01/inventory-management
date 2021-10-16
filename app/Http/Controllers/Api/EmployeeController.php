@@ -15,11 +15,11 @@ class EmployeeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         $employee= Employee::all();
         return response()->json($employee);
-
     }
 
     /**
@@ -30,7 +30,7 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        $validateteData = $request->validate([
+        $validateData = $request->validate([
             'name' => 'required|unique:employees|max:255',
             'email' => 'required',
             'phone' => 'required|unique:employees',

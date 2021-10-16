@@ -62,7 +62,7 @@ export const routes = [
     {path: '/', component: login, name: '/'},
     {path: '/register', component: register, name: 'register'},
     {path: '/forget', component: forget, name: 'forget'}, 
-    {path: '/logout', component: logout, name: 'logout'}, 
+    {path: '/logout', component: logout, name: 'logout'},
     {path: '/home', component: home, name : 'home'},
 
     // Employee Routes 

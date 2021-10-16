@@ -15,6 +15,7 @@ export default {
         this.$router.push({name: '/'});
     }    
 }
+
 </script>
 
 <style type="text/css">

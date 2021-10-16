@@ -3359,8 +3359,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 //
 //
 //
@@ -3413,7 +3411,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = (_defineProperty({
+/* harmony default export */ __webpack_exports__["default"] = ({
   // This runs first before login method works
   created: function created() {
     if (!User.loggedIn()) {
@@ -3421,6 +3419,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         name: '/'
       });
     }
+
+    this.allEmployee();
   },
   data: function data() {
     return {
@@ -3475,9 +3475,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
     }
   }
-}, "created", function created() {
-  this.allEmployee();
-}));
+});
 
 /***/ }),
 
